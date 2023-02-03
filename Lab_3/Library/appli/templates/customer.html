@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Customers
+{% endblock %}
+
+{% block content %}
+  <!-- content specific to this page goes here --> 
+{% for c in customers %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Title: {{c.name}}</h5>
+    <a href="{% url 'sort' c.id%}" class="card-link">Books borrowed</a>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
