@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Order Confirmation
+{% endblock %}
+
+{% block content %}
+    <h1>Your order has been confirmed!</h1>
+    <p>Thank you for your order. Your pizza will be delivered to the following address:</p>
+    <p>{{ name }}</p>
+    <p>{{ address }}</p>
+    <h2>Your Order:</h2>
+    <p><strong>Size:</strong> {{ size }}</p>
+    <p><strong>Crust:</strong> {{ crust }}</p>
+    <p><strong>Sauce:</strong> {{ sauce }}</p>
+    <p><strong>Cheese:</strong> {{ cheese }}</p>
+    <p><strong>Toppings:</strong> {% for topping in toppings %}{{ topping }} {% endfor %}</p>
+{% endblock %}

@@ -1,0 +1,31 @@
+/* styles.css */
+
+/* Homepage styles */
+.jumbotron {
+    background-image: url("/static/img/pizza.jpg");
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    padding: 200px 0;
+    margin-bottom: 0;
+  }
+  
+  /* Pizza form styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-check-input {
+    margin-right: 10px;
+  }
+  
+  .form-check-label {
+    margin-left: 25px;
+  }
+  
+  /* Order confirmation styles */
+  .container {
+    padding: 100px 0;
+    text-align: center;
+  }
+  

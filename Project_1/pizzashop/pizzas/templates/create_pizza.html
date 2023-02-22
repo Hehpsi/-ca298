@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Build Your Pizza</h1>
+
+<form method="post" action="{% url 'order' %}">
+  {% csrf_token %}
+  <label for="size">Size:</label>
+  <select name="size" id="size">
+    {% for size in sizes %}
+      <option value="{{ size.id }}">{{ size.name }}</option>
+    {% endfor %}
+  </select><br><br>
+
+  <label for="crust">Crust:</label>
+  <select name="crust" id="crust">
+    {% for crust in crusts %}
+      <option value="{{ crust.id }}">{{ crust.name }}</option>
+    {% endfor %}
+  </select><br><br>
+
+  <label for="sauce">Sauce:</label>
+  <select name="sauce" id="sauce">
+    {% for sauce in sauces %}
+      <option value="{{ sauce.id }}">{{ sauce.name }}</option>
+    {% endfor %}
+  </select><br><br>
+
+  <label for="cheese">Cheese:</label>
+  <select name="cheese" id="cheese">
+    {% for cheese in cheeses %}
+      <option value="{{ cheese.id }}">{{ cheese.name }}</option>
+    {% endfor %}
+  </select><br><br>
+
+  <label for="toppings">Toppings:</label><br>
+  {% for topping in toppings %}
+    <input type="checkbox" name="toppings" value="{{ topping.id }}"> {{ topping.name }}<br>
+  {% endfor %}
+
+  <br><br>
+  <button type="submit">Order</button>
+</form>
+
+{% endblock %}
